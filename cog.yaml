@@ -83,7 +83,14 @@ build:
     # ComfyUI-KJNodes
     - librosa
     - color-matcher
+
+    # ComfyUI-PuLID
+    - facexlib
+    - basicsr
   run:
     - curl -o /usr/local/bin/pget -L "https://github.com/replicate/pget/releases/download/v0.6.0/pget_linux_x86_64" && chmod +x /usr/local/bin/pget
     - pip install onnxruntime-gpu --extra-index-url https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/
+    # https://github.com/XPixelGroup/BasicSR/issues/649
+    # https://github.com/ZHO-ZHO-ZHO/ComfyUI-PuLID-ZHO/issues/3
+    - "sed -i '8s/from torchvision.transforms.functional_tensor import rgb_to_grayscale/from torchvision.transforms.functional import rgb_to_grayscale/' /root/.pyenv/versions/3.10.6/lib/python3.10/site-packages/basicsr/data/degradations.py"
 predict: "predict.py:Predictor"

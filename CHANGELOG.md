@@ -1,5 +1,6 @@
 ## 2024-05-03
 
+- [Add PuLID support](https://github.com/ZHO-ZHO-ZHO/ComfyUI-PuLID-ZHO)
 - Adding support for [rembg](https://github.com/danielgatis/rembg), used in a variety of custom nodes
 - Update ComfyUI_tinyterraNodes to latest to fix rembg issue
 
