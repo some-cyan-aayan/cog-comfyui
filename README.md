@@ -114,7 +114,7 @@ You can view the list of nodes in [custom_nodes.json](https://github.com/fofr/co
 
 1. **GPU Machine**: Start the Cog container and expose port 8188:
 ```sh
-sudo cog run -p 8188 bash
+cog run -p 8188 bash
 ```
 Running this command starts up the Cog container and let's you access it
 
